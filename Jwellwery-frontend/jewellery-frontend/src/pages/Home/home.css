@@ -1,0 +1,75 @@
+.carousel {
+    background-image: url("//cdn.shopify.com/s/files/1/1244/2630/t/15/assets/hero_slide_1.jpg?v=7181959718104573847");
+    height: 100vh;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero__detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.hero__button {
+    height: 3em;
+    width: 9em;
+    font-size: 1em;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-top: 2em;
+    margin-bottom: 12em;
+    transition: 600ms;
+}
+
+.hero__button:hover {
+    border: black;
+    color: black;
+    background: white;
+}
+
+.home__intro {
+    padding: 1.4em 12rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro__image {
+    height: 7em;
+    width: 7em;
+}
+
+.intro__slogan {
+    font-size: 1.5em;
+    font-weight: 100;
+    margin-bottom: 1em;
+}
+
+.intro__brief {
+    font-size: 1.3em;
+    margin: 1em 0em;
+    text-align: center;
+}
+
+.home__product {
+    padding: 1.4em 12rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3.2em;
+}
+
+.detail__highlight {
+    font-size: 2.5em;
+}
+
+.section--header {
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'Sansita', sans-serif;
+    margin-bottom: .75em;
+}

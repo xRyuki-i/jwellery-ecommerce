@@ -1,0 +1,31 @@
+.footer {
+    background: #EEEEEE;
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    padding: 1.4em 12rem;
+    margin-top: auto;
+    height: fit-content;
+}
+
+.footnav {
+    padding: 1em 0em;
+}
+
+.footnav__header {
+    list-style: none;
+    display: flex;
+}
+
+.link {
+    margin: 0em 1.5em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.copyright {
+    padding: 1em 0em;
+}

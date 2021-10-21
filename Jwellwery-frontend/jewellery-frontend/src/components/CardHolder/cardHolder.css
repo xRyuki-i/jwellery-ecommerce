@@ -1,0 +1,25 @@
+.cardHolder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardHolder__title {
+    font-size:  1.7em;
+    margin-bottom: 1.3em;
+    font-family: "Sansita", sans-serif;
+}
+
+.cardHolder__btn {
+    height: 2.5em;
+    width: 8em;
+    background-color: white;
+    font-weight: bold;
+    transition: 600ms;
+}
+
+.cardHolder__btn:hover {
+    background-color: black;
+    border: white;
+    color: white;
+}

@@ -1,0 +1,29 @@
+.header-admin {
+  width: auto;  
+}
+
+.product-form {
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    padding: 2em 1em;
+}
+
+h3 {
+    text-align: center;
+}
+
+.form__text {
+    height: 1.5em;
+}
+
+.form__submit {
+    margin: 1.5em 0em;
+    height: 2.3em;
+    color: white;
+    background: #1173D0;
+    border: white;
+    border-radius: .3em;
+}

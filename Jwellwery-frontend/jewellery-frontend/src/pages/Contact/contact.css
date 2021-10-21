@@ -1,0 +1,33 @@
+.contact {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Sansita', sans-serif;
+}
+
+.topic--contact {
+    text-align: center;
+    font-size: 2.3em;
+    margin-bottom: .5em;
+}
+
+.contact__info {
+    width: 60%;
+    margin: auto;
+}
+
+.info {
+    margin: 2.5em;
+    text-align: center;
+    line-height: 1.5em;
+}
+
+.info__image {
+    height: 4.5em;
+    width: 4.5em;
+}
+
+hr {
+    width: 2.5em;
+    margin: auto;
+    background-color: black;
+}

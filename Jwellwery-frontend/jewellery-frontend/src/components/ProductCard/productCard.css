@@ -1,0 +1,24 @@
+
+.card {
+    height: 18em;
+    width: 20em;
+    margin-bottom: 2em;
+    display: flex;
+    flex-direction: column;
+    font-family: "Kameron", sans-serif;
+}
+
+.card__image {
+    height: 18em;
+    width: 20em;
+    margin: auto;
+    object-fit: contain;
+}
+
+.card__detail {
+    margin: auto;
+}
+
+.detail__name {
+    font-size: 1.2em;
+}

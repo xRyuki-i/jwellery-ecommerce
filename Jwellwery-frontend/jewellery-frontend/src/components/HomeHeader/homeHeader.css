@@ -1,0 +1,69 @@
+.homeHeader {
+    display: flex;
+    width: auto;
+    justify-content: space-between;
+    padding: 1.4em 12rem;
+    color: white;
+}
+
+.homeHeader a {
+    color: white;
+}
+
+.home__nav {
+    padding: 1em 0em;
+}
+
+.hnav__header {
+    list-style: none;
+    display: flex;
+}
+
+.hlist {
+    margin: 0em 1.5em;
+}
+
+.home__logo {
+    font-size: 2em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+.hlist a {
+    text-decoration: none;
+    color: white;
+}
+
+.home__nav a:hover {
+    color: #C0AC80;
+}
+
+.hlist--dropDown {
+    padding: 1em 1em;
+    margin-top: -1em;
+}
+
+.hlist--dropDown:hover {
+    background: white;
+    color: black;
+}
+
+
+.hlist__dropDown {
+    display: none;
+    list-style: none;
+    border-top: 1px solid black;
+    margin-top: 1em;
+}
+
+.hlist--dropDown:hover > .hlist__dropDown {
+    display: block;
+}
+
+.hlist__dropDown a{
+    color: black;
+}
+
+.hdropDown__list {
+    margin-top: 1em;
+}

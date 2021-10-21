@@ -1,0 +1,58 @@
+.header-admin {
+  width: auto;
+  padding: 1em;
+  background-color: black;
+  color: white;
+}
+
+.table-container {
+  width: 80%;
+  align-items: center;
+  margin: 4em 10em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.table__add {
+  margin: 2em 0em;
+  height: 2.5em;
+  color: white;
+  background: #1173D0;
+  border: white;
+  border-radius: 0.3em;
+}
+
+.table__update {
+  margin: 0em .5em;
+  height: 2.5em;
+  color: white;
+  background: #1173D0;
+  border: white;
+  border-radius: 0.3em;
+}
+
+.table__remove {
+  margin: 0em .5em;
+  height: 2.5em;
+  color: white;
+  background: red;
+  border: white;
+  border-radius: 0.3em;
+}
+
+table {
+    margin: 0 auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
