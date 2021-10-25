@@ -1,0 +1,30 @@
+.cartProd {
+    display: flex;
+    flex-direction: row;
+    height: 10em;
+    width: 10em;
+}
+
+.cartProd__image {
+    height: 8em;
+    width: 10em;
+    margin: auto;
+    object-fit: contain;
+}
+
+.cardProd__detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 5em;
+}
+
+.size__minus {
+    width: 1.5em;
+    margin-right: .5em;
+}
+
+.size__plus {
+    width: 1.5em;
+    margin-left: .5em;
+}

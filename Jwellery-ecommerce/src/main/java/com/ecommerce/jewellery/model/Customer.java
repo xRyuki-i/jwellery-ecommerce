@@ -30,7 +30,7 @@ public class Customer {
     private String customerPhone;
 
     @NotEmpty
-    private String CustomerEmail;
+    private String customerEmail;
 
     @NotEmpty
     @Size(max = 8)

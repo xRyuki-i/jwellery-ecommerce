@@ -3,8 +3,12 @@ package com.ecommerce.jewellery.service;
 import com.ecommerce.jewellery.dao.CategoryRepository;
 import com.ecommerce.jewellery.model.Category;
 import java.util.List;
+
+import com.ecommerce.jewellery.model.Product;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
 import javax.persistence.EntityNotFoundException;
 
 @Service
@@ -21,11 +25,26 @@ public class CategoryService {
     }
 
     public Category getById(long id){
-        return categoryRepository.findById(id).orElseThrow(EntityNotFoundException::new) ;
+        Category category = categoryRepository.findById(id).orElseThrow(EntityNotFoundException::new) ;
+        for (Product p: category.getProducts()){
+            p.setImage(ServletUriComponentsBuilder.fromCurrentContextPath().path("/productImage/").path(p.getImage()).toUriString());
+        }
+        return category;
     }
 
+//    public List<Category> getAll(){
+//        return categoryRepository.findAll();
+//    }
+
     public List<Category> getAll(){
-        return categoryRepository.findAll();
+        List<Category> category = categoryRepository.findAll();
+        for(Category c:category){
+            for (Product p: c.getProducts()){
+                p.setImage(ServletUriComponentsBuilder.fromCurrentContextPath().path("/productImage/").path(p.getImage()).toUriString());
+            }
+        }
+
+        return category;
     }
 
     public Category updateCategory(Long id, Category updatedCategory){

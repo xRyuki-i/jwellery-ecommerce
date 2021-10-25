@@ -8,7 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.validation.Valid;
+
 @RestController
+@CrossOrigin
 public class CustomerController {
     @Autowired
     private CustomerService service;
@@ -23,10 +26,20 @@ public class CustomerController {
         return service.getById(id);
     }
 
+//    @PostMapping("/saveCustomer")
+//    public ResponseEntity<Customer> setCustomer(@RequestBody Customer customer){
+//        return new ResponseEntity<Customer>(
+//                service.save(customer), HttpStatus.CREATED);
+//    }
+
     @PostMapping("/saveCustomer")
-    public ResponseEntity<Customer> setCustomer(@RequestBody Customer customer){
-        return new ResponseEntity<Customer>(
-                service.save(customer), HttpStatus.CREATED);
+    public Object setCustomer(@Valid @RequestBody Customer customer){
+        return service.registration(customer);
+    }
+
+    @GetMapping("/customer/login")
+    public Object loginCustomer(@RequestParam("customerEmail") String customerEmail,@RequestParam("customerPassword") String customerPassword){
+        return service.validate(customerEmail, customerPassword);
     }
 
     @PutMapping("/updateCustomer/{id}")

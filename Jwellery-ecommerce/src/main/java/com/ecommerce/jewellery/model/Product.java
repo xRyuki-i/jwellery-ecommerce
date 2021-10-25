@@ -26,8 +26,10 @@ public class Product {
 //    private String type;
     @NotEmpty
     private double productPrice;
-//    @NotEmpty
-//    private int productQuantity;
+
+    @NotEmpty
+    private int productQuantity;
+
     @NotEmpty
     private String image;
 //    @NotEmpty
@@ -43,13 +45,10 @@ public class Product {
     @JsonBackReference(value = "product-category")
     private Category category;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "cart_products",
-            joinColumns = @JoinColumn(name = "product_id"),
-            inverseJoinColumns = @JoinColumn(name = "cart_id")
-    )
+    @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
+//    @JsonManagedReference(value =  "product-cartProduct")
     @JsonIgnore
-    private  Collection<Cart> carts = new ArrayList<>();
+    private  Collection<CartProduct> cartProducts = new ArrayList<>();
 
 }
 

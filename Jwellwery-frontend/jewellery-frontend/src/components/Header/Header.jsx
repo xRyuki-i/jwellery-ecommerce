@@ -34,11 +34,11 @@ export const Header = () => {
                     </li>
 
                     <li className="list">
-                        <Link to="/"><FaUser/></Link>
+                        <Link to="/login"><FaUser/></Link>
                     </li>
 
                     <li className="list">
-                        <Link to="/"><FaShoppingCart/></Link>
+                        <Link to="/cart"><FaShoppingCart/></Link>
                     </li>
                 </ul>
             </nav>

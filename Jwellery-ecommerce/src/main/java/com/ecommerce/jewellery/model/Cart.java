@@ -16,10 +16,9 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long cartId;
 
-    private int quantity;
-
-    @ManyToMany(mappedBy = "carts" , cascade = CascadeType.ALL)
-    private Collection<Product> products = new ArrayList<>();
+    @OneToMany(mappedBy = "cart", cascade = CascadeType.ALL)
+//    @JsonManagedReference(value =  "cart-cartProduct")
+    private  Collection<CartProduct> cartProducts = new ArrayList<>();
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "customerId")

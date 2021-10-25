@@ -4,9 +4,11 @@ import { CardHolder } from '../../components/CardHolder/CardHolder';
 import { Footer } from '../../components/Footer/Footer';
 import { HomeHeader } from '../../components/HomeHeader/HomeHeader';
 import {FaCartArrowDown} from "react-icons/fa";
+import { useHistory } from 'react-router';
 
 
 export const Home = () => {
+    const history = useHistory();
     return (
         <>
             <div className="carousel">
@@ -15,7 +17,7 @@ export const Home = () => {
                 <section className="hero__detail">
                     <p>DISCOVER A NEW TAKE ON</p>
                     <h3 className="detail__highlight">PANDORA RINGS</h3>
-                    <button className="hero__button">SHOP NOW <FaCartArrowDown/></button>
+                    <button className="hero__button" onClick={()=>{history.push("/category/ring")}}>SHOP NOW <FaCartArrowDown/></button>
                 </section>
             </div>
 
@@ -32,9 +34,9 @@ export const Home = () => {
             <hr />
 
             <section className="home__product">
-                <CardHolder/>
-                <CardHolder/>
-                <CardHolder/>
+                <CardHolder title="ring"/>
+                <CardHolder title="necklace"/>
+                <CardHolder title="bracelet"/>
             </section>
 
             <Footer/>

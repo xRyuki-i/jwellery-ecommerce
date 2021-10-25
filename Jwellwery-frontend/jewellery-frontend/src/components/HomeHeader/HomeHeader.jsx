@@ -34,11 +34,11 @@ export const HomeHeader = () => {
                     </li>
 
                     <li className="hlist">
-                        <Link to="/"><FaUser/></Link>
+                        <Link to="/login"><FaUser/></Link>
                     </li>
 
                     <li className="hlist">
-                        <Link to="/"><FaShoppingCart/></Link>
+                        <Link to="/cart"><FaShoppingCart/></Link>
                     </li>
                 </ul>
             </nav>

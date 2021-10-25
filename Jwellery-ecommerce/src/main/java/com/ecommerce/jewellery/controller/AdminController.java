@@ -34,4 +34,9 @@ public class AdminController {
     public String deleteAll(){
         return service.deleteAllAdmin();
     }
+
+    @GetMapping("/admin/login")
+    public Object loginAdmin(@RequestParam("email") String email,@RequestParam("adminPassword") String adminPassword){
+        return service.validate(email, adminPassword);
+    }
 }

@@ -10,9 +10,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
-
     @Modifying
     @Transactional
-    @Query("UPDATE Product p SET p.productPrice=:productPrice WHERE p.productId=:productId")
-    void updateProductById(@Param("productId") long productId,@Param("productPrice") Double productPrice);
+    @Query("UPDATE Product p SET p.productQuantity=:productQuantity WHERE p.productId=:productId")
+    void updateProductById(@Param("productId") long productId, @Param("productQuantity") int productQuantity);
 }

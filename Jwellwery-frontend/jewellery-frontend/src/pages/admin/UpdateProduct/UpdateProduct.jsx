@@ -1,8 +1,8 @@
-import React from 'react';
-import './addProduct.css';
-import { useState, useEffect } from 'react';
+import React, {useEffect, useState} from 'react';
+import './updateProduct.css';
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import {useLocation} from 'react-router';
 
 let data ={
             name:"",
@@ -17,15 +17,14 @@ let data ={
             }
         }
 
-export const AddProduct = () => {
+export const UpdateProduct = () => {
 
     const history = useHistory();
+    const  { state } = useLocation();
+    console.log(state);
+    const [product, setProduct] = useState({name: state.name, productPrice: state.productPrice, detail: state.detail, category:{categoryId:state.categoryName}, productQuantity: state.productQuantity});
     let [image, setImage]=useState();
-    const [product, setProduct] = useState(data);
     const[productCategory, setProductCategory]=useState();
-
-    // const [product, setProduct] = useState({name: '', detail:'',productPrice:'', image: '',category: ''});
-    // const [products, setProducts] = useState([]);
 
     const handleChange = (e) => {
 
@@ -49,7 +48,7 @@ export const AddProduct = () => {
         setProduct({ ...product});
         // alert("chalyo");
     };
-
+    
     const handleImageChange = (e) => {
         image = e.target.files[0];
         setImage(image);
@@ -60,6 +59,7 @@ export const AddProduct = () => {
        
         history.push('/product');
         console.log(product);
+        alert("bhayo");
         const formData=new FormData();
             formData.append("product", JSON.stringify(product));
             formData.append("file", image);
@@ -69,9 +69,9 @@ export const AddProduct = () => {
 
     const fetchProduct=(formData)=>{  
         // Make a request for a user with a given ID
-        axios.post(`http://localhost:3038/saveProduct`, formData)
+        axios.put(`http://localhost:3038/updateProductById/${state.productId}`, formData)
             .then((response) => {
-                alert("save");
+                alert("updated");
                 console.log(response);
     
             })
@@ -81,10 +81,13 @@ export const AddProduct = () => {
             });
       }
 
+
+
       const fetchCategoryForProduct=()=>{  
         // Make a request for a user with a given ID
         axios.get(`http://localhost:3038/category`)
             .then((response) => {
+                alert("fetched");
                 console.log("category");
                 console.log(response.data);
                 setProductCategory(response.data);
@@ -109,7 +112,7 @@ export const AddProduct = () => {
             <article>
                 
                 <form className="product-form" onSubmit={handleSubmit}>
-                    <h3>Add Product</h3>
+                    <h3>Update Product</h3>
 
                     <hr/>
 
@@ -156,7 +159,7 @@ export const AddProduct = () => {
                         value={product.detail}
                         onChange={handleChange}/>
 
-                    <button className="form__submit" type="submit">Add Product</button>
+                    <button className="form__submit" type="submit">Update Product</button>
                 </form>
             </article>
         </>
